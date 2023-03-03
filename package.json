@@ -1,5 +1,5 @@
 {
-  "name": "studio-form",
+  "name": "webflow-github-template-documentation",
   "version": "0.0.0",
   "description": "Universal, multi-step, conditional webflow form creation script",
   "default": "src/index.html",

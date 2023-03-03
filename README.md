@@ -1,35 +1,4 @@
-# Webflow Large-Scale Software Development Kit
+# Sample code for a smooth and successful development process of the /BarthMedia/template
 
-Minimalistic template repository for building rich native JavaScript / jQuery applications for Webflow
-
-
-
-## How to get started?
-
-You gotta download the file (/zip) --> open it in Visual Studio Code --> Open the Terminal --> Type in npm i --> And then npm start
-
-(Make sure you have npm installed -> https://nodejs.org/en/download/)
-
-In case you are at the state of wanting to push to github...
-
-
-
-## Windows initial git(hub) commit info:
-
-git init
-
-git branch -m master main
-
-git config --global user.name YOUR NAME
-
-git config --global user.email YOUR_EMAIL
-
-git add -A
-
-git commit -m 'initial commit 🚀'
-
-git remote add origin https://github.com/USER/REPO.git
-
-git remote set-url origin https://github.com/USER/REPO.git
-
-git push origin main
+Test it yourself at:
+https://www.bmg.studio/documentation/github-template?w_io=https://xano-test-application.webflow.io&h_url=http://localhost:1234/index.e37f48ea.js&d_title=[BMG.studio]%20-%20Studio%20Form

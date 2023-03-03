@@ -4,29 +4,41 @@
 
 // Custom
 import * as config from '../config.js';
+import copyStringToClipboard from '../helper/copyStringToClipboard.js';
 
 // + Classes +
 
 // Base WebflowView
 class WebflowView {
   // ELements
-  #body = $(config.BODY_SELECTOR);
+  #devUrlButton = $(config.DEV_URL_BUTTON_SELECTOR);
+  #clipboardButton = $(config.CLIPBOARD_BUTTON_SELECTOR);
 
   // Values
-  string = 'hello, world!';
 
-  // Functions
+  // - Functions -
 
-  // Test
-  consoleLog(message = this.string) {
-    console.log(this.#body, message);
+  // Dev url button
+  initDevUrlButton(href) {
+    // Overwrite
+    this.#devUrlButton.attr('href', href);
+  }
+
+  // Clipboard button
+  initClipboardButton(string) {
+    // Clear
+    this.#clipboardButton.attr('href', '#');
+
+    // Event listener
+    this.#clipboardButton.click(function () {
+      copyStringToClipboard(string, this);
+    });
+    // this.#clipboardButton.attr('href', href)
   }
 
   // Event listeners
   addHandler(handler) {
-    ['hashchange', 'load'].forEach(event =>
-      window.addEventListener(event, handler)
-    );
+    ['load'].forEach(event => window.addEventListener(event, handler));
   }
 }
 

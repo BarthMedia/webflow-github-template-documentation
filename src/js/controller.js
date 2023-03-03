@@ -11,19 +11,17 @@ import * as model from './model.js';
 // + Functions +
 
 // Control test
-const controlTest = async function () {
+const control = async function () {
   try {
-    // 1st view test
-    view.consoleLog('loading...');
+    // Get URL parameter data from model
+    model.createUrlParameterObject();
 
-    // Model test
-    await model.testData();
+    // Deconstruct state
+    const { urlSearchParams } = model.state.data;
 
-    // Log test data
-    console.log(model.state.data);
-
-    // 2nd view test
-    view.consoleLog();
+    // Initialize buttons
+    view.initDevUrlButton(urlSearchParams.href);
+    view.initClipboardButton(urlSearchParams.snippet);
   } catch (err) {
     console.log(`Error: ${err}`);
   }
@@ -31,6 +29,6 @@ const controlTest = async function () {
 
 // + Initialize +
 const init = function () {
-  view.addHandler(controlTest);
+  view.addHandler(control);
 };
 init();
